@@ -1,6 +1,6 @@
 <div class="container p-3 mt-5">
     <h1 class="mt-5 mb-5 text-white">Movie Details</h1>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center" *ngIf="movie">
         <div class="details-img">
           <img src={{movie.image}} class="me-3">
         </div>
@@ -9,10 +9,12 @@
           <hr class="my-4">
           <h3>Summary:</h3>
           <p>{{movie.summary}}</p>
-          <h2>Language : {{movie.language}}</h2>
+          <h3>Language : {{movie.language}}  </h3>
+         
           <div class="row mt-3">
               <div class="d-flex">
                 <button class="btn btn-warning me-2" (click)="goHome()">Go Home</button>
+                <a href={{movie.url}}><button class="btn btn-success me-2">Visit</button></a>
                 <button class="btn btn-danger" (click)="deleteMovie()">Remove Movie</button>
               </div>
          
