@@ -1,0 +1,11 @@
+<div class="col-md-4 me-3 mt-3">
+    <div class="card">
+        <img src={{movie.image}} class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{movie.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Rating : {{movie.rating['average'] || 0}}</h6>  
+            <button class="btn btn-warning" (click)="openDetails(movie.id)">Details</button>        
+            
+        </div>
+    </div>
+</div>

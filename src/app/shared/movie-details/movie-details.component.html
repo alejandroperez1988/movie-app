@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Movie Details</h1>
+    <div class="d-flex justify-content-center">
+        <div class="details-img">
+          <img src={{movie.image}} class="jumbotron__background">
+        </div>
+        <div class="container text-white">
+          <h1>{{movie.name}}</h1>
+          <hr class="my-4">
+          <p>{{movie.summary}}</p>
+          <h2>Language : {{movie.language}}</h2>
+          <button class="btn btn-warning mt-3" (click)="goHome()">Go Home</button>
+        </div>
+      </div>
+</div>

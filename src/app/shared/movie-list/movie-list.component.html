@@ -1,0 +1,6 @@
+<div class="p-3 list-titles">
+    <h1 class="h4 text-white mt-4 mb-4">Trending Movies</h1>
+    <div class="d-flex flex-wrap overflow-hidden justify-content-center">
+        <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
+    </div>
+</div>
