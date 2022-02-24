@@ -10,12 +10,13 @@ import { MoviesService } from 'src/app/core/services/movies.service';
 })
 export class MovieDetailsComponent implements OnInit {
   movie!: Movie;
+  movieId!: string;
   constructor(private activatedRoute : ActivatedRoute, private movieService:MoviesService, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
       console.log(params);
-      
+      this.movieId=params.get('id')!;
       this.getMovieById(params.get('id')!);
       
     });
@@ -33,5 +34,14 @@ export class MovieDetailsComponent implements OnInit {
   goHome(){
     this.router.navigateByUrl('');
   }
+
+  deleteMovie(){
+    this.movieService.deleteMovieById(this.movieId).subscribe(result =>{
+      this.router.navigateByUrl('');
+    })
+  }
+
+  
+
 
 }

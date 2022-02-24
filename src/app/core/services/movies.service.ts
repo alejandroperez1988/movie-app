@@ -20,4 +20,8 @@ export class MoviesService {
   public getMovieById(id:string): Observable<Movie>{
     return this.httpClient.get<Movie>(this.url+'movies/'+id);
   }
+
+  public deleteMovieById(id:string){
+    return this.httpClient.delete(this.url+'movies/'+id);
+  }
 }
